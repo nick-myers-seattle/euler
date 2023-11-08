@@ -22,8 +22,4 @@ jobs:
         aws-region: us-east-1
 
     - name: Deploy to Amazon S3
-      uses: aws-actions/s3-sync@v2
-      with:
-        source_dir: .
-        bucket: euler
-        delete: true
+      run: aws s3 sync . s3://euler --delete
