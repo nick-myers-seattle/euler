@@ -22,11 +22,11 @@ export class CrutchesComponent implements OnInit {
       console.log(this.medicalSupplies);
 
       this.medicalSupplies.forEach((item :string) => {
-        if (item === 'wheelchair') {
+        if (item === 'wheelchairs') {
           this.wheelchairs = true;
-        } else if (item === 'walker') {
+        } else if (item === 'walkers') {
           this.walkers = true;
-        } else if (item === 'cane') {
+        } else if (item === 'canes') {
           this.canes = true;
         } else if (item === 'crutches') {
           this.crutches = true;
