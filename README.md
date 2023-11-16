@@ -1,4 +1,5 @@
 # Euler
+Angular UI for a demo healthcare supplies company, to test out my Python server
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.6.
 
