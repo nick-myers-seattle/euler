@@ -10,6 +10,7 @@ import { WalkersComponent } from './walkers/walkers.component';
 import { CanesComponent } from './canes/canes.component';
 import { CrutchesComponent } from './crutches/crutches.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { CheckoutComponent } from './checkout/checkout.component';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
