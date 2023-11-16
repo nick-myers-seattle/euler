@@ -1,0 +1,17 @@
+<h1>Here's the canes we have in stock today!</h1>
+<h4>Just click the image of what you want!</h4>
+
+  <div *ngIf="medicalSupplies" class="wrapper">
+    <div *ngIf="wheelchairs" class="tile">
+        <img src="../../assets/images/standard-cane.webp" alt="Wheelchair" routerLink="/checkout">
+    </div>
+    <div *ngIf="walkers" class="tile">
+        <img src="../../assets/images/offset-cane.webp" alt="Walker" routerLink="/checkout">
+    </div>
+    <div *ngIf="canes" class="tile">
+       <img src="../../assets/images/multiple-legged-cane.avif" alt="Cane" routerLink="/checkout">
+    </div>
+    <div *ngIf="crutches" class="tile">
+        <img src="../../assets/images/chair-cane.webp" alt="Crutches" routerLink="/checkout">
+    </div>
+</div>

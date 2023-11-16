@@ -1,0 +1,20 @@
+<h1>Choose a category</h1>
+<h4>Just click the image of what you want!</h4>
+
+  <div *ngIf="medicalSupplies" class="wrapper">
+    <div *ngIf="wheelchairs" class="tile">
+        <img src="../../assets/images/wheelchair.jpg" alt="Wheelchair" routerLink="/wheelchairs">
+    </div>
+    <div *ngIf="walkers" class="tile">
+        <img src="../../assets/images/walker.webp" alt="Walker" routerLink="/walkers">
+    </div>
+    <div *ngIf="canes" class="tile">
+       <img src="../../assets/images/cane.webp" alt="Cane" routerLink="/canes">
+    </div>
+    <div *ngIf="crutches" class="tile">
+        <img src="../../assets/images/crutches.avif" alt="Crutches" routerLink="/crutches">
+    </div>
+    <div *ngIf="hospitalBeds" class="tile">
+        <img src="../../assets/images/hospitalbed.png" alt="Hospital Beds" routerLink="/hospital-beds">
+    </div>
+</div>

@@ -1,0 +1,17 @@
+<h1>Here's the crutches we have in stock today!</h1>
+<h4>Just click the image of what you want!</h4>
+
+  <div *ngIf="medicalSupplies" class="wrapper">
+    <div *ngIf="wheelchairs" class="tile">
+        <img src="../../assets/images/axillary-crutches.jpeg" alt="Wheelchair" routerLink="/checkout">
+    </div>
+    <div *ngIf="walkers" class="tile">
+        <img src="../../assets/images/elbow-crutches.webp" alt="Walker" routerLink="/checkout">
+    </div>
+    <div *ngIf="canes" class="tile">
+       <img src="../../assets/images/gutter-crutches.webp" alt="Cane" routerLink="/checkout">
+    </div>
+    <div *ngIf="crutches" class="tile">
+        <img src="../../assets/images/forearm-crutches.jpeg" alt="Crutches" routerLink="/checkout">
+    </div>
+</div>

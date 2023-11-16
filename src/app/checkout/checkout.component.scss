@@ -1,0 +1,26 @@
+h1, h2, h3, h4, h5 {
+    color: #1976d2;
+    text-align: center;
+}
+
+input, button {
+    display: block;
+    margin: 20px auto;
+}
+
+button {
+    background-color: #1976d2;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    padding: 10px;
+    &:hover {
+        cursor: pointer;
+        background-color: #1976d2;
+        opacity: 50%;
+    }
+    &:active {
+        background-color: #1976d2;
+        opacity: 100%;
+    }
+}

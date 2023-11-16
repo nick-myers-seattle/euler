@@ -1,0 +1,31 @@
+h1, h2, h3, h4, h5 {
+    color: #1976d2;
+    text-align: center;
+}
+
+.wrapper {
+    max-width: 1100px;
+    margin: auto;
+
+    .tile {
+        display: inline-block;
+        border: 10px solid #1976d2;
+        border-radius: 10px;
+        margin: 10px;
+        padding: 5px;
+        &:hover {
+            cursor: pointer;
+            background-color: #1976d2;
+        }
+
+        img {
+            background-color: white;
+            margin: 5px;
+            width: 200px;
+            height: 200px;
+            &:hover {
+                opacity: 50%;
+            }
+        }
+    }
+}
