@@ -30,7 +30,7 @@ export class MedicalSuppliesComponent implements OnInit {
           this.canes = true;
         } else if (item === 'crutches') {
           this.crutches = true;
-        } else if (item === 'hospital-bed') {
+        } else if (item === 'hospital-beds') {
           this.hospitalBeds = true;
         }
       });
