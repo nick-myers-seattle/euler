@@ -7,33 +7,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./canes.component.scss']
 })
 export class CanesComponent implements OnInit {
-  medicalSupplies :string[] = [];
-  wheelchairs = false;
-  walkers = false;
-  canes = false;
-  crutches = false;
-  hospitalBeds = false;
+  canes = true;
+  standard = 0;
+  offset = 0;
+  multipleLegged = 0;
+  chair = 0;
 
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
-    this.http.get('https://pythonapiserver.azurewebsites.net/v1/medical-supplies').subscribe((data :any) => {
-      this.medicalSupplies = data['medical-supplies'];
-      console.log(this.medicalSupplies);
+    this.http.get('https://pythonapiserver.azurewebsites.net/v1/canes').subscribe((data :any) => {
+      this.standard = data['standard'];
+      this.offset = data['offset'];
+      this.multipleLegged = data['multiple-legged'];
+      this.chair = data['chair'];
 
-      this.medicalSupplies.forEach((item :string) => {
-        if (item === 'wheelchairs') {
-          this.wheelchairs = true;
-        } else if (item === 'walkers') {
-          this.walkers = true;
-        } else if (item === 'canes') {
-          this.canes = true;
-        } else if (item === 'crutches') {
-          this.crutches = true;
-        } else if (item === 'hospital-bed') {
-          this.hospitalBeds = true;
-        }
-      });
+      if (!this.standard && !this.offset && !this.multipleLegged && !this.chair) {
+        this.canes = false;
+      }
     });
   }
 }

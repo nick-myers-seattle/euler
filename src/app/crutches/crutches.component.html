@@ -1,17 +1,46 @@
 <h1>Here's the crutches we have in stock today!</h1>
-<h4>Just click the image of what you want!</h4>
+<h4>Just click the tile of what you want!</h4>
 
-  <div *ngIf="medicalSupplies" class="wrapper">
-    <div *ngIf="wheelchairs" class="tile">
-        <img src="../../assets/images/axillary-crutches.jpeg" alt="Wheelchair" routerLink="/checkout">
+<div class="wrapper">
+  <div *ngIf="!crutches">Out of stock, check back tomorrow!</div>
+
+  <div *ngIf="axillary > 0" class="tile" routerLink="/checkout">
+    <img src="../../assets/images/axillary-crutches.jpeg" alt="Axillary Crutches">
+    <div class="details">
+      <span>Axillary Crutches</span>
+      <br/>
+      <br/>
+      <span>in stock:  {{ axillary }}</span>
     </div>
-    <div *ngIf="walkers" class="tile">
-        <img src="../../assets/images/elbow-crutches.webp" alt="Walker" routerLink="/checkout">
+  </div>
+
+  <div *ngIf="elbow > 0" class="tile" routerLink="/checkout">
+    <img src="../../assets/images/elbow-crutches.webp" alt="Elbow Crutches">
+    <div class="details">
+      <span>Elbow Crutches</span>
+      <br/>
+      <br/>
+      <span>in stock:  {{ elbow }}</span>
     </div>
-    <div *ngIf="canes" class="tile">
-       <img src="../../assets/images/gutter-crutches.webp" alt="Cane" routerLink="/checkout">
+  </div>
+
+  <div *ngIf="gutter > 0" class="tile" routerLink="/checkout">
+    <img src="../../assets/images/gutter-crutches.webp" alt="Gutter Crutches">
+    <div class="details">
+      <span>Gutter Crutches</span>
+      <br/>
+      <br/>
+      <span>in stock:  {{ gutter }}</span>
     </div>
-    <div *ngIf="crutches" class="tile">
-        <img src="../../assets/images/forearm-crutches.jpeg" alt="Crutches" routerLink="/checkout">
+  </div>
+
+  <div *ngIf="forearm > 0" class="tile" routerLink="/checkout">
+    <img src="../../assets/images/forearm-crutches.jpeg" alt="Forearm Crutches">
+    <div class="details">
+      <span>Forearm Crutches</span>
+      <br/>
+      <br/>
+      <span>in stock:  {{ forearm }}</span>
     </div>
+  </div>
 </div>

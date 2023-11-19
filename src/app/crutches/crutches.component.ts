@@ -7,33 +7,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./crutches.component.scss']
 })
 export class CrutchesComponent implements OnInit {
-  medicalSupplies :string[] = [];
-  wheelchairs = false;
-  walkers = false;
-  canes = false;
-  crutches = false;
-  hospitalBeds = false;
+  crutches = true;
+  axillary = 0;
+  elbow = 0;
+  gutter = 0;
+  forearm = 0;
 
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
-    this.http.get('https://pythonapiserver.azurewebsites.net/v1/medical-supplies').subscribe((data :any) => {
-      this.medicalSupplies = data['medical-supplies'];
-      console.log(this.medicalSupplies);
+    this.http.get('https://pythonapiserver.azurewebsites.net/v1/crutches').subscribe((data :any) => {
+      this.axillary = data['axillary'];
+      this.elbow = data['elbow'];
+      this.gutter = data['gutter'];
+      this.forearm = data['forearm'];
 
-      this.medicalSupplies.forEach((item :string) => {
-        if (item === 'wheelchairs') {
-          this.wheelchairs = true;
-        } else if (item === 'walkers') {
-          this.walkers = true;
-        } else if (item === 'canes') {
-          this.canes = true;
-        } else if (item === 'crutches') {
-          this.crutches = true;
-        } else if (item === 'hospital-bed') {
-          this.hospitalBeds = true;
-        }
-      });
+      if (!this.axillary && !this.elbow && !this.gutter && !this.forearm) {
+        this.crutches = false;
+      }
     });
   }
 }

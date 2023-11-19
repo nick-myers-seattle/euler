@@ -1,17 +1,46 @@
 <h1>Here's the walkers we have in stock today!</h1>
-<h4>Just click the image of what you want!</h4>
+<h4>Just click the tile of what you want!</h4>
 
-  <div *ngIf="medicalSupplies" class="wrapper">
-    <div *ngIf="wheelchairs" class="tile">
-        <img src="../../assets/images/standard-walker.jpeg" alt="Wheelchair" routerLink="/checkout">
+<div class="wrapper">
+  <div *ngIf="!walkers">Out of stock, check back tomorrow!</div>
+
+  <div *ngIf="standard > 0" class="tile" routerLink="/checkout">
+    <img src="../../assets/images/standard-walker.jpeg" alt="Standard Walker">
+    <div class="details">
+      <span>Standard Walker</span>
+      <br/>
+      <br/>
+      <span>in stock:  {{ standard }}</span>
     </div>
-    <div *ngIf="walkers" class="tile">
-        <img src="../../assets/images/rollator-walker.jpeg" alt="Walker" routerLink="/checkout">
+  </div>
+
+  <div *ngIf="rollator > 0" class="tile" routerLink="/checkout">
+    <img src="../../assets/images/rollator-walker.jpeg" alt="Rollator Walker">
+    <div class="details">
+      <span>Rollator Walker</span>
+      <br/>
+      <br/>
+      <span>in stock:  {{ rollator }}</span>
     </div>
-    <div *ngIf="canes" class="tile">
-       <img src="../../assets/images/folding-walker.webp" alt="Cane" routerLink="/checkout">
+  </div>
+
+  <div *ngIf="folding > 0" class="tile" routerLink="/checkout">
+    <img src="../../assets/images/folding-walker.webp" alt="Folding Walker">
+    <div class="details">
+      <span>Folding Walker</span>
+      <br/>
+      <br/>
+      <span>in stock:  {{ folding }}</span>
     </div>
-    <div *ngIf="crutches" class="tile">
-        <img src="../../assets/images/knee-walker.jpeg" alt="Crutches" routerLink="/checkout">
+  </div>
+
+  <div *ngIf="knee > 0" class="tile" routerLink="/checkout">
+    <img src="../../assets/images/knee-walker.jpeg" alt="Knee Walker">
+    <div class="details">
+      <span>Knee Walker</span>
+      <br/>
+      <br/>
+      <span>in stock:  {{ knee }}</span>
     </div>
+  </div>
 </div>
