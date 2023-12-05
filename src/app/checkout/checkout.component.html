@@ -1,8 +1,10 @@
 <h1>Thank you for your selection!</h1>
-<h4>If you enter your name and email address into this Angular app, my Python server will send you a confirmation of your selection and a copy of my resume! (Once I implement the /checkout endpoint)</h4>
-<!-- [(ngModel)]="name" -->
-<!-- [(ngModel)]="email" -->
-<input type="text" placeholder="Name" >
-<input type="text" placeholder="Email">
+<h3>If you enter your name and email address into this Angular app, my Python server will send you a confirmation and a copy of my resume!</h3>
+<br/>
 
-<button (click)="sendEmail()">Submit</button>
+<form [formGroup]="checkoutForm" (ngSubmit)="sendEmail()">
+  <input type="text" placeholder="Name" formControlName="name">
+  <input type="text" placeholder="Email" formControlName="email">
+
+  <button type="submit" [disabled]="checkoutForm.invalid">Submit</button>
+</form>

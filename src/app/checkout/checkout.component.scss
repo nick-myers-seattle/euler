@@ -23,4 +23,8 @@ button {
         background-color: #1976d2;
         opacity: 100%;
     }
+    &:disabled {
+        background-color: #ccc;
+        cursor: not-allowed;
+    }
 }

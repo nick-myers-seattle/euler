@@ -11,6 +11,7 @@ import { CanesComponent } from './canes/canes.component';
 import { CrutchesComponent } from './crutches/crutches.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,9 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
